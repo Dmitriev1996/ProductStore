@@ -1,0 +1,11 @@
+<app-search-bar></app-search-bar>
+<div id="content">
+  <div *ngFor="let product of products" id="product">
+    <a [routerLink]="['/product', product.product_ID]">
+      <h6>{{product.nameOfProduct}}</h6><br>
+      <img [src]="'data:image/JPEG;base64,' +product.picture | safeHtml"/>
+    </a>
+    <h6>{{product.price}} руб.</h6>
+    <button>Купить</button><br>
+  </div>
+</div>

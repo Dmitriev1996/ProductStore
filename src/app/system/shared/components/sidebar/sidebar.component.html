@@ -1,0 +1,7 @@
+<div id="sidebar" *ngFor="let typeProduct of typeProducts">
+  <a [routerLink]="['/catalog', typeProduct.typeProduct_ID]">
+    <div class="label">
+      {{typeProduct.typeProduct}}
+    </div>
+  </a>
+</div>

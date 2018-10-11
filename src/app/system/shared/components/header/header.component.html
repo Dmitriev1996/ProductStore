@@ -1,0 +1,27 @@
+<header>
+  <a id="shop_label" href="#">ProductsShop</a>
+  <div id="city_bar">
+    <p>Выберите город:</p><br>
+    <select>
+      <option *ngFor="let city of cities">{{city.city}}</option>
+    </select>
+  </div>
+  <div id="cart_bar">
+    <a [routerLink]="['/cart']">Корзина</a><br>
+    {{saleValue}}
+  </div>
+  <div *ngIf="token!==null; else isNotAuth">
+    <span>
+      Здравствуйте, {{client.name}}
+    </span>
+    <a [routerLink]="['/profile']">
+      Мой профиль
+    </a>
+    <button (click)="logout()">Выход</button>
+  </div>
+  <ng-template #isNotAuth>
+    <div id="enter">
+      <button class="head_button" (click)="login()">Вход</button>
+    </div>
+  </ng-template>
+</header>

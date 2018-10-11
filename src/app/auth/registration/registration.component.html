@@ -1,0 +1,24 @@
+<div>
+  <form (ngSubmit)="submitForm()">
+  <p>Фамилия:</p><br>
+  <input type="text" ngModel name="surname" size="40"><br>
+  <p>Имя:</p><br>
+  <input type="text" ngModel name="name" size="40"><br>
+  <p>Отчество:</p><br>
+  <input type="text" ngModel name="patronymic" size="40"><br>
+  <p>Дата рождения:</p><br>
+  <input type="text" ngModel name="dateOfBirth" size="40"><br>
+  <p>Пол:</p><br>
+  <select ngModel name="sex">
+    <option>Мужской</option>
+    <option>Женский</option>
+  </select><br>
+  <p>Логин:</p><br>
+  <input type="text" ngModel name="login" size="40"><br>
+  <p>Пароль:</p><br>
+  <input type="password" ngModel name="password" size="40"><br>
+  <p>Подтверждение:</p><br>
+  <input type="password" ngModel name="confirmPassword" size="40"><br>
+  <button class="btn btn-success" type="submit">OK</button>
+  </form>
+</div>

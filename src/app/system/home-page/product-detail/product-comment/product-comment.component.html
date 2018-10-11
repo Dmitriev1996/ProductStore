@@ -1,0 +1,6 @@
+<div id="content">
+  <div id="comment" *ngFor="let comment of comments">
+    <div id="client_personal">{{comment.client.name}} {{comment.client.surname}}</div>
+    <div id="text_comment">{{comment.comment}}</div>
+  </div>
+</div>

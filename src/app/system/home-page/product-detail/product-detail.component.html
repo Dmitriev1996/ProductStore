@@ -1,0 +1,19 @@
+<div id="content">
+  <div id="product">
+      <h6>{{product.nameOfProduct}}</h6><br>
+      <img [src]="'data:image/JPEG;base64,' +product.picture | safeHtml"/>
+    <h6>{{product.price}} руб.</h6>
+    <button (click)="addToCart()">Купить</button><br>
+  </div>
+<div id="switch">
+    <a [routerLink]="['./', 'comment']">
+      Комментарии
+    </a>
+    <a [routerLink]="['./', 'description']">
+      Описание
+    </a>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
+</div>
