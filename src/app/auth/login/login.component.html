@@ -1,12 +1,12 @@
 <div id="login">
-  <form>
+  <form (ngSubmit)="submitForm(form)" #form="ngForm">
     <div id="login_data">
      <p>Логин:</p><br>
-     <input type="text" size="40"><br>
+     <input type="text" [(ngModel)]="login" name="login" required size="40"><br>
      <p>Пароль:</p><br>
-     <input type="text" size="40"><br>
+     <input type="text" [(ngModel)]="password" name="password" size="40"><br>
     </div>
-    <input type="submit" value="OK">
+    <button [disabled]="!form.valid" type="submit">OK</button>
   </form><br>
   <p>Ещё не зарегистрированы?</p>
   <a [routerLink]="['../', 'registration']">Регистрация</a>

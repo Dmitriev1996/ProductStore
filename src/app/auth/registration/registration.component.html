@@ -1,24 +1,24 @@
 <div>
-  <form (ngSubmit)="submitForm()">
+  <form (ngSubmit)="submitForm(form)" #form="ngForm">
   <p>Фамилия:</p><br>
-  <input type="text" ngModel name="surname" size="40"><br>
+  <input type="text" [(ngModel)]="surname" name="surname" required size="40"><br>
   <p>Имя:</p><br>
-  <input type="text" ngModel name="name" size="40"><br>
+  <input type="text" [(ngModel)]="name" name="name" required size="40"><br>
   <p>Отчество:</p><br>
-  <input type="text" ngModel name="patronymic" size="40"><br>
+  <input type="text" [(ngModel)]="patronymic" name="patronymic" required size="40"><br>
   <p>Дата рождения:</p><br>
-  <input type="text" ngModel name="dateOfBirth" size="40"><br>
+  <input type="text" [(ngModel)]="dateOfBirth" name="dateOfBirth" required size="40"><br>
   <p>Пол:</p><br>
-  <select ngModel name="sex">
+  <select [(ngModel)]="gender" name="sex" required>
     <option>Мужской</option>
     <option>Женский</option>
   </select><br>
   <p>Логин:</p><br>
-  <input type="text" ngModel name="login" size="40"><br>
+  <input type="text" [(ngModel)]="login" name="login" required size="40"><br>
   <p>Пароль:</p><br>
-  <input type="password" ngModel name="password" size="40"><br>
+  <input type="password" [(ngModel)]="password" name="password" required size="40"><br>
   <p>Подтверждение:</p><br>
-  <input type="password" ngModel name="confirmPassword" size="40"><br>
-  <button class="btn btn-success" type="submit">OK</button>
+  <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required size="40"><br>
+  <button class="btn btn-success" [disabled]="!form.valid" type="submit">OK</button>
   </form>
 </div>
