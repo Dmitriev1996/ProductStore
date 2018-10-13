@@ -7,6 +7,7 @@ import { AuthComponent } from './auth.component';
 import {AuthRoutingModule} from "./auth-routing.module";
 import {FormsModule} from '@angular/forms';
 import {ClientService} from "../shared/services/client.service";
+import {SexService} from "../shared/services/sex.service";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,6 @@ import {ClientService} from "../shared/services/client.service";
     FormsModule
   ],
   bootstrap: [AuthComponent],
-  providers: [ClientService]
+  providers: [ClientService, SexService]
 })
 export class AuthModule {}

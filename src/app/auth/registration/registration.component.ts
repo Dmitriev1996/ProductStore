@@ -4,6 +4,8 @@ import {ClientService} from "../../shared/services/client.service";
 import {Client} from "../../shared/models/client.model";
 import {Sex} from "../../shared/models/sex.model";
 import {Credential} from "../../shared/models/credential.model";
+import {CityService} from "../../shared/services/city.service";
+import {SexService} from "../../shared/services/sex.service";
 
 @Component({
   selector: 'app-registration',
@@ -12,11 +14,12 @@ import {Credential} from "../../shared/models/credential.model";
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService,
+              private sexService: SexService) { }
 
-  client: Client;
-  sex: Sex;
-  credential: Credential;
+  client: Client = new Client();
+  sex: Sex = new Sex();
+  credential: Credential = new Credential();
   surname: string;
   name: string;
   patronymic: string;
@@ -25,6 +28,7 @@ export class RegistrationComponent implements OnInit {
   login: string;
   password: string;
   confirmPassword: string;
+  recClient: Client;
 
 
 
@@ -32,6 +36,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   submitForm(form: NgForm) {
+    console.log(this.surname);
     this.client.surname = this.surname;
     this.client.name = this.name;
     this.client.patronymic = this.patronymic;
@@ -47,8 +52,9 @@ export class RegistrationComponent implements OnInit {
     this.credential.password = this.password;
     this.credential.role = 'user';
     this.client.credential = this.credential;
-    this.clientService.addClient(this.client);
-    console.log(this.surname);
+    this.clientService.addClient(this.client).subscribe();
+    //console.log(this.recClient);
+    /*console.log(this.surname);
     console.log(this.name);
     console.log(this.patronymic);
     console.log(this.dateOfBirth);
@@ -56,7 +62,7 @@ export class RegistrationComponent implements OnInit {
     console.log(this.login);
     console.log(this.password);
     console.log(this.confirmPassword);
-    console.log('Данные отправлены на сервер!', form);
+    console.log('Данные отправлены на сервер!', form);*/
   }
 
 }

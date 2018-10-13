@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
     this.typeProductService.getTypeProducts().subscribe((typeProducts: TypeProduct[]) => {
       this.typeProducts = typeProducts;
     });
+    console.log(this.typeProducts)
   }
 
 }
