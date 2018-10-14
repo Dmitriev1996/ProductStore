@@ -35,12 +35,28 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  paresDate(date: string): string {
+    var dateParse: string = '';
+    var mas: string[] = [];
+    mas = date.split('.');
+    console.log(mas);
+    for(var i = mas.length-1; i>=0; i--) {
+      console.log(i);
+      dateParse += mas[i];
+      if(i>=1) {
+        dateParse += '-';
+      }
+    }
+    return dateParse;
+  }
+
+
   submitForm(form: NgForm) {
     console.log(this.surname);
     this.client.surname = this.surname;
     this.client.name = this.name;
     this.client.patronymic = this.patronymic;
-    this.client.dateOfBirth = this.dateOfBirth;
+    this.client.dateOfBirth = this.paresDate(this.dateOfBirth);
     if(this.gender == 'Мужской') {
       this.sex.sex_ID = 1;
     } else {
@@ -52,6 +68,8 @@ export class RegistrationComponent implements OnInit {
     this.credential.password = this.password;
     this.credential.role = 'user';
     this.client.credential = this.credential;
+    console.log(this.dateOfBirth);
+    console.log(this.paresDate(this.dateOfBirth));
     this.clientService.addClient(this.client).subscribe();
     //console.log(this.recClient);
     /*console.log(this.surname);

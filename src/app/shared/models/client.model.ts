@@ -11,10 +11,10 @@ export class Client {
   constructor(
   ) {}
   public client_ID: number;
-  public name: String;
-  public surname: String;
-  public patronymic: String;
-  public dateOfBirth: String;
+  public name: string;
+  public surname: string;
+  public patronymic: string;
+  public dateOfBirth: string;
   public sex: Sex;
   public buyList: Buy[];
   public orderList: Order[];

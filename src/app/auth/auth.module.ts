@@ -8,6 +8,7 @@ import {AuthRoutingModule} from "./auth-routing.module";
 import {FormsModule} from '@angular/forms';
 import {ClientService} from "../shared/services/client.service";
 import {SexService} from "../shared/services/sex.service";
+//import { MaterialModule } from '../material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {SexService} from "../shared/services/sex.service";
   imports: [
     CommonModule,
     AuthRoutingModule,
-    FormsModule
+    FormsModule/*,
+    MaterialModule*/
   ],
   bootstrap: [AuthComponent],
   providers: [ClientService, SexService]
