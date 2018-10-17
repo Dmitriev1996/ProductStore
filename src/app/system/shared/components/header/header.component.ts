@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit, OnChanges {
               private router: Router) { }
 
   client: Client;
-  token: string = '';
+  token: string;
   city: string = '';
   cities: City[];
   saleValue: number;
@@ -55,7 +55,8 @@ export class HeaderComponent implements OnInit, OnChanges {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['']);
+    this.router.navigate(['/catalog']);
+    window.location.reload();
   }
 
 

@@ -1,4 +1,7 @@
 <div id="login">
+  <div *ngIf="status!==null">
+     {{status.clientError}}
+  </div>
   <form (ngSubmit)="submitForm(form)" #form="ngForm">
     <div id="login_data">
      <p>Логин:</p><br>

@@ -33,8 +33,11 @@ export class BaseApi {
       url: this.baseUrl + url,
       body: body
     });
-    return this.http.request(this.request).map((response) => response.json());
+    return this.http.request(this.request).map(response =>
+      response.json()
+    );
   }
+
 
 }
 

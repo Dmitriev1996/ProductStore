@@ -1,0 +1,35 @@
+#sidebar
+{
+  background-color: #19b80b;
+  width: 19%;
+  height: 100%;
+  margin-left: 1%;
+  float: left;
+  /*position: absolute;*/
+}
+
+.label
+{
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.label:hover
+{
+  background-color: #008000;
+  -webkit-transition: all.6s ease;
+  -moz-transition: all.6s ease;
+  -o-transition: all.6s ease;
+  -ms-transition: all.6s ease;
+  transition: all.6s ease;
+}
+
+a
+{
+  color: #5c5c5c;
+  text-decoration: none;
+  padding: 0;
+}

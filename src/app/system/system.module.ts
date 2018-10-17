@@ -29,6 +29,13 @@ import { CityService } from "../shared/services/city.service";
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { SafeHtml } from "./shared/pipes/safe-html.pipe";
 import { CartComponent } from './shared/components/cart/cart.component';
+import { ClientSidebarComponent } from './shared/components/client-sidebar/client-sidebar.component';
+import { MyProfileComponent } from './home-page/profile/my-profile/my-profile.component';
+import { MyOrdersComponent } from './home-page/profile/my-orders/my-orders.component';
+import { MyBuysComponent } from './home-page/profile/my-buys/my-buys.component';
+import { MyCommentsComponent } from './home-page/profile/my-comments/my-comments.component';
+import { MyBonusCardsComponent } from './home-page/profile/my-bonus-cards/my-bonus-cards.component';
+import { MyForumsComponent } from './home-page/profile/my-forums/my-forums.component';
 
 
 
@@ -50,7 +57,14 @@ import { CartComponent } from './shared/components/cart/cart.component';
     SidebarComponent,
     SearchBarComponent,
     SafeHtml,
-    CartComponent
+    CartComponent,
+    ClientSidebarComponent,
+    MyProfileComponent,
+    MyOrdersComponent,
+    MyBuysComponent,
+    MyCommentsComponent,
+    MyBonusCardsComponent,
+    MyForumsComponent
   ],
   providers: [BonusCardService, BuyService, ClientService, CommentService, CredentialService, TypeProductService,
   ForumService, MessageService, OrderService, ProductService, SexService, StatusOfOrderService, TransportationService,
