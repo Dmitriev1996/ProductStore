@@ -1,6 +1,25 @@
-<div id="product" *ngFor="let product of products">
-  {{product.nameOfProduct}} {{product.price}} руб.
-</div>
-<div id="sum">
-  Итого: {{sum}} руб.
+<div id="cart_panel">
+  <table>
+    <tr class="product_row" *ngFor="let product of products; let j=index">
+      <td class="check_row">
+        <input class="check" type="checkbox"/>
+      </td>
+      <td class="iteration">
+        {{j+1}}
+      </td>
+      <td>
+        {{product.nameOfProduct}}
+      </td>
+      <td>
+        {{product.price}} руб.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Итого:</td>
+      <td>{{sum}} руб.</td>
+    </tr>
+  </table>
+  <button (click)="deleteProduct()">Удалить из списка</button>
+  <button>Оформить заказ</button>
 </div>

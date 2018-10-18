@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
   item: string;
   i: number;
   sum: number = 0;
+  collection: HTMLCollectionOf<Element>;
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
@@ -39,6 +40,17 @@ export class CartComponent implements OnInit {
           });
       }
     }
+  }
+
+  deleteProduct() {
+     this.collection = document.getElementsByClassName('product_row');
+     for(var i=0, len=this.collection.length; i<len; i++) {
+       //console.log(this.collection.item(i));
+       console.log(this.collection.item(i)
+         .getElementsByClassName('check').item(1).valueOf());
+       //console.log(this.collection.item(i).getElementsByClassName('iteration'));
+     }
+
   }
 
 }
